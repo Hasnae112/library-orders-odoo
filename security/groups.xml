@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Library Category -->
+    <record id="module_category_library" model="ir.module.category">
+        <field name="name">Library</field>
+        <field name="description">Library Management Module</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <!-- Admin Group -->
+    <record id="group_admin" model="res.groups">
+        <field name="name">Library Admin</field>
+        <field name="comment">Full access to all library management features</field>
+        <field name="category_id" ref="module_category_library"/>
+    </record>
+
+    <!-- Employee Group -->
+    <record id="group_employee" model="res.groups">
+        <field name="name">Library Employee</field>
+        <field name="comment">Can manage books, members, and invoices</field>
+        <field name="category_id" ref="module_category_library"/>
+    </record>
+
+    <!-- Member Group -->
+    <record id="group_member" model="res.groups">
+        <field name="name">Library Member</field>
+        <field name="comment">Can view books and their own loan history</field>
+        <field name="category_id" ref="module_category_library"/>
+    </record>
+</odoo>
